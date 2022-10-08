@@ -3,6 +3,9 @@
 
 :root {
   --primary: #fe2c55;
+  //Default layout
+  --default-layout-header-height: 60px;
+  --default-layout-header-witdh: 1150px;
 }
 * {
   padding: 0;
