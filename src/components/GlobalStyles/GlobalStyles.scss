@@ -3,6 +3,8 @@
 
 :root {
   --primary: #fe2c55;
+  --text-color: #333;
+  --white: #fff;
   //Default layout
   --default-layout-header-height: 60px;
   --default-layout-header-witdh: 1150px;
@@ -18,4 +20,16 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }
