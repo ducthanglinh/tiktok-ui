@@ -8,11 +8,17 @@ import Button from "~/components/Button";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCircleQuestion,
   faCircleXmark,
+  faEarthAfrica,
+  faEllipsisVertical,
+  faKeyboard,
   faMagnifyingGlass,
+  faSignIn,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import AccountItem from "~/components/AccountItem";
+import Menu from "~/components/Popper/Menu";
 const cx = classNames.bind(styles);
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
@@ -22,6 +28,22 @@ function Header() {
       setSearchResult([1, 2, 3]);
     }, 3000);
   }, []);
+
+  const MENU_ITEMS = [
+    {
+      icon: <FontAwesomeIcon icon={faEarthAfrica} />,
+      title: "Viet Nam",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+      title: "Feadback and help",
+      to: "/feadback",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faKeyboard} />,
+      title: "Keyboard Shortcuts",
+    },
+  ];
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
@@ -29,7 +51,6 @@ function Header() {
 
         <Tippy
           interactive
-          visible={searchResult.length > 0}
           render={(attrs) => (
             <div className={cx("search-result")} tabIndex="-1" {...attrs}>
               <PopperWrapper>
@@ -58,7 +79,13 @@ function Header() {
           </div>
         </Tippy>
         <div className={cx("action")}>
+          <Button text>Tải lên</Button>
           <Button primary>Đăng nhập</Button>
+          <Menu items={MENU_ITEMS}>
+            <button className={cx("more-btn")}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>
