@@ -1,13 +1,14 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,200;1,300;1,400&family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&family=Roboto:wght@300;400;500&display=swap");
 
 :root {
   --primary: #fe2c55;
-  --text-color: #333;
+  --text-color: rgb(22, 24, 35);
   --white: #fff;
   //Default layout
   --default-layout-header-height: 60px;
   --default-layout-header-witdh: 1150px;
+  --default-layout-horiontal-spacer: 24px;
 }
 * {
   padding: 0;
@@ -32,4 +33,15 @@ input,
 a[href] {
   color: var(--text-color);
   text-decoration: none;
+}
+body {
+  .tippy-box {
+    background-color: rgba(84, 84, 84, 0.92);
+  }
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
+  .tippy-content {
+    padding: 8px 9px;
+  }
 }
